@@ -13,7 +13,7 @@
 #' # For example, today is Monday 2019-04-29. Rates of today will be from Saturday 2019-04-27.
 #' cbr_rates_with_weekends(start_date = '2019-04-29')
 #' @export
-cbr_rates_with_weekends <- function(code = "USD", start_date = Sys.Date() - 7, end_date = Sys.Date()){
+cbr_rates_with_weekends <- function(code = "USD", start_date = Sys.Date() - 7, end_date = Sys.Date() - 1){
   start_date <- as.Date(start_date)
   end_date <- as.Date(end_date)
 

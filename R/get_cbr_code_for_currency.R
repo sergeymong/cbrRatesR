@@ -4,8 +4,3 @@ get_cbr_code_for_currency <- function(currency_iso_code = "USD"){
 
   return(all_codes[all_codes$ISO_Char_Code == currency_iso_code, ]$ParentCode)
 }
-
-#TODO Описать Description
-#TODO Описать NEWS
-#TODO Описать Readme
-#

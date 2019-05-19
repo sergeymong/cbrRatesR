@@ -14,7 +14,7 @@
 #' # Dynamic of cost rouble to 1 EUR in 2017
 #' cbr_rates(code = 'EUR', '2017-01-01', '2017-12-31')
 #' @export
-cbr_rates <- function(code = "USD", start_date = Sys.Date() - 7, end_date = Sys.Date()) {
+cbr_rates <- function(code = "USD", start_date = Sys.Date() - 7, end_date = Sys.Date() - 1) {
 
   start <- strftime(start_date, "%d/%m/%Y")
   end <- strftime(end_date, "%d/%m/%Y")
