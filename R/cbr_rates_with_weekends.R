@@ -18,11 +18,11 @@ cbr_rates_with_weekends <- function(code = "USD", start_date = Sys.Date() - 7, e
   end_date <- as.Date(end_date)
 
   if (lubridate::wday(start_date, week_start = 1) >= 6 | lubridate::wday(start_date, week_start = 1) == 1){
-    start <- start_date - 3
+    start_date <- start_date - 3
   }
 
-  cbr_rates <- cbr_rates(code = code, start_date = start, end_date = end_date)
-  all_dates <- data.frame(Date = seq(start, end_date, by=1))
+  cbr_rates <- cbr_rates(code = code, start_date = start_date, end_date = end_date)
+  all_dates <- data.frame(Date = seq(start_date, end_date, by=1))
   df <- dplyr::left_join(all_dates, cbr_rates, by = "Date")
   df <- zoo::na.locf(df)
   res <- dplyr::filter(df, Date >= start_date & Date <= end_date)
